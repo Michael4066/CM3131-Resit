@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" /> <!-- import ionic framework -->
+</head>
+<body>
+    <ion-app>
+        <ion-header>
+            <ion-toolbar color="primary">
+            <ion-title>
+                ShowDB
+            </ion-title>
+            </ion-toolbar>
+        </ion-header>
+      
+
+<!--The header that always remains present -->
+            
+       
+
+        <ion-tabs>  <!-- Use ion tabs to seperate the three screens -->
+            <ion-tab tab="home">
+              <ion-header translucent>
+                <ion-toolbar>
+                  <ion-title>Welcome!</ion-title>
+                </ion-toolbar>
+              </ion-header>
+    
+              <ion-content fullscreen class="ion-padding">
+                <h1>Welcome!</h1>
+              </ion-content>
+              <ion-card>
+                <ion-card-content>
+              <p>ShowDB is an app for everyone who loves to watch TV! With the help of the TVMaze API, you can search the name of nearly any show you can think of. Once you have, click on "My Shows" to add it to your list. Happy Watching!</p>
+            </ion-card-content>
+                <ion-card-content>
+                    <ion-img width="80" height="80" src="Images/TVstock.jpg"></ion-img>
+                </ion-card-content>
+            </ion-card>
+            </ion-tab>
+    
+            <ion-tab tab="search">
+              <ion-header translucent>
+                <ion-toolbar>
+                  <ion-title>search</ion-title>
+                </ion-toolbar>
+              </ion-header>
+    
+              <ion-content fullscreen class="ion-padding">
+                <h1>Look for a Show</h1>
+                <ion-item>
+                    <ion-searchbar types="text" id="userInput"></ion-searchbar>
+                </ion-item>
+                <ion-list id="ResultsList"></ion-list>
+
+                <!-- Give the searchbar input and the empty list identifiers so API data can be substituted in Javascript. -->
+                
+                </ion-item>
+              </ion-content>
+            </ion-tab>
+    
+            <ion-tab tab="list">
+              <ion-header translucent>
+                <ion-toolbar>
+                  <ion-title>My List</ion-title>
+                </ion-toolbar>
+              </ion-header>
+    
+              <ion-content fullscreen class="ion-padding">
+                <h1>My WatchList</h1>
+   
+                    <ion-item>
+                        <ion-label position="floating">Name of Show</ion-label>
+                        <ion-input type="string" id="showName"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                    <ion-label position="floating">Watch Status</ion-label>
+                        <ion-input type="string" id="showStatus"></ion-input>
+                    </ion-item>
+                    <ion-button expand="block" id="addBtn">Add</ion-button>
+                    <ion-card-content id ="storedList"></ion-card-content>
+              </ion-content>
+            </ion-tab>
+
+                <!-- Assign identifiers in order to read/write to Local Storage -->
+
+    
+            <ion-tab-bar slot="bottom">
+              <ion-tab-button tab="home">
+                <ion-label>Home</ion-label>
+                <ion-icon name="home-sharp"></ion-icon>
+              </ion-tab-button>
+              <ion-tab-button tab="search">
+                <ion-label>Search</ion-label>
+                <ion-icon name="search-sharp"></ion-icon>
+              </ion-tab-button>
+              <ion-tab-button tab="list">
+                <ion-label>My Shows</ion-label>
+                <ion-icon name="list-sharp"></ion-icon>
+              </ion-tab-button>
+            </ion-tab-bar>
+          </ion-tabs>
+
+          <!-- Here we define the properties of the tab buttons that are ever present at the bottom of the screen -->
+       
+        
+    </ion-app>
+
+    <script src="Home.js"></script></script>
+
+    <!-- Once the hard HTML code is established link the corresponding Javascript file in order to add functionality  -->
+   
+</body>
+</html>
